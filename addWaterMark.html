@@ -18,10 +18,10 @@
             can.style.display = "none";
 
             //定义水印样式，旋转角度，颜色，字体，字号
-            var cans = can.getContext('2d');
+            var cans = can.getContext('2d'); //得到一个在画布上绘图的环境
             cans.rotate(-20*Math.PI/180);
-            cans.font = (20);
-            cans.fillstyle = "rgba(45, 23, 17, 0.50)";
+            cans.font = "20px,.SF NS TEXT";
+            cans.fillstyle = "rgba(0, 0, 0, 0.5)";
             cans.textAlign = "left";
             cans.textBaseline = "middle";
 
