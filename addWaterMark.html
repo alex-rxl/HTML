@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加水印</title>
+
+    <script>
+
+        // 这个是给页面添加水印的js
+        //当页面加载时，执行添加水印方法
+        window.onload = function addWaterMaker () {
+            //创建画布
+            var can = document.createElement("canvas"); //创建canvas元素
+            var body = document.body;
+            body.appendChild(can);
+            can.width = 150;
+            can.height = 120;
+            can.style.display = "none";
+
+            //定义水印样式，旋转角度，颜色，字体，字号
+            var cans = can.getContext('2d');
+            cans.rotate(-20*Math.PI/180);
+            cans.font = (20);
+            cans.fillstyle = "rgba(45, 23, 17, 0.50)";
+            cans.textAlign = "left";
+            cans.textBaseline = "middle";
+
+            //获取水印内容；原始：cans.fillText(<%=Session.Contents("username")%>,can.width/3,can.height/2);
+            cans.fillText("IKEA-LIT-484", can.width/3,can.height/2);
+            body.style.backgroundImage = "url("+can.toDataURL("image/png")+")";
+
+
+
+        }
+
+    </script>
+</head>
+<body>
+
+
+
+</body>
+</html>
